@@ -13,12 +13,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST
 
 @RestController
 @RequestMapping('/notes')
-class NoteController {
+class NotesController {
 
     private final NoteService noteService
 
     @Autowired
-    NoteController(NoteService noteService) {
+    NotesController(NoteService noteService) {
         this.noteService = noteService
     }
 
