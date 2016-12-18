@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE'
+	}
+}
+
+apply plugin: 'groovy'
+apply plugin: 'org.springframework.boot'
+
+clean {
+    delete 'data'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+
+    compile 'org.springframework.boot:spring-boot-devtools'
+    compile 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-3'
+    testCompile 'net.bytebuddy:byte-buddy:1.5.9'
+
+    runtime 'net.java.dev.jna:jna:4.2.2'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2.1'
+}
